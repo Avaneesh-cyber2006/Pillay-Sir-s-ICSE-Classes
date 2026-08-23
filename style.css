@@ -1,0 +1,646 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+    color: #262626;
+    background: #FFFFFF;
+    text-align: center;
+}
+
+/* Hero Section - Background Image */
+.hero {
+    height: 100vh;
+    background: url('logo.jpg') no-repeat center center; /* Background Image */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Dark Overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(38, 38, 38, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Text */
+.hero h1 {
+    font-size: 3rem;
+    color: #FFFFFF;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    background: #D96B1F;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+.btn:hover {
+    background: #C85A16;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+    transform: scale(1.1);
+}
+
+/* Course Cards */
+.course-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.course-card {
+    padding: 20px;
+    background: #FFFFFF;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari Fix */
+    border-radius: 15px;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+    width: 250px;
+    font-weight: bold;
+    transition: box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    border-color: #D96B1F;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+form input, form textarea {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #E3E3E3;
+}
+
+textarea {
+    height: 100px;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background: #EAF2E2;
+    color: #262626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .course-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* =========================================
+   PHASE 1 - MULTI-PAGE WEBSITE ADDITIONS
+   ========================================= */
+
+html, body {
+    overflow-x: hidden;
+}
+
+a.btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px 14px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid #E3E3E3;
+}
+
+.site-nav a {
+    color: #262626;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-shadow: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+    color: #D96B1F;
+    text-shadow: none;
+}
+
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.hero-compact {
+    height: 36vh;
+    min-height: 220px;
+}
+
+.page-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+.page-section {
+    margin-bottom: 48px;
+}
+
+.page-section h2 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: #D96B1F;
+    text-shadow: none;
+}
+
+.section-note {
+    color: #555555;
+    margin-bottom: 24px;
+}
+
+.content-panel {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 28px;
+    background: #FFFFFF;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+    text-align: left;
+}
+
+.content-panel h2 {
+    margin-top: 24px;
+}
+
+.content-panel h2:first-child {
+    margin-top: 0;
+}
+
+.content-panel p {
+    margin-bottom: 16px;
+}
+
+.content-panel a:not(.btn) {
+    color: #D96B1F;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.content-panel a:not(.btn):hover {
+    color: #C85A16;
+    text-shadow: none;
+}
+
+.page-main .course-card {
+    width: min(100%, 300px);
+    text-align: left;
+    font-weight: normal;
+}
+
+.page-main .course-card h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #D96B1F;
+    text-shadow: none;
+}
+
+.page-main .course-card p {
+    margin-bottom: 10px;
+    color: #555555;
+}
+
+.page-main .course-card .btn {
+    margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    .site-nav {
+        gap: 4px 8px;
+        padding: 10px 8px;
+    }
+
+    .site-nav a {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+    }
+
+    .hero-compact {
+        height: auto;
+        min-height: 180px;
+        padding: 80px 16px 32px;
+    }
+
+    .page-main .course-card {
+        width: min(100%, 340px);
+    }
+
+    .content-panel {
+        padding: 20px 16px;
+    }
+}
+
+.math-symbol {
+    text-shadow: none;
+    opacity: 0.4;
+}
+
+/* =========================================
+   LOCATION + CONTACT PAGE UPDATES
+   ========================================= */
+
+.location-page,
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.locations-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.location-card {
+    flex: 1 1 400px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 28px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+.location-card h2 {
+    margin-top: 0;
+    color: #D96B1F;
+    text-shadow: none;
+}
+
+.location-card p {
+    margin-bottom: 16px;
+    color: #555555;
+}
+
+.location-card .btn {
+    margin-top: auto;
+}
+
+.contact-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 720px;
+    gap: 24px;
+}
+
+.contact-card {
+    width: 100%;
+    padding: 28px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+    text-align: center;
+}
+
+.contact-card h2 {
+    margin-top: 0;
+    color: #D96B1F;
+    text-shadow: none;
+}
+
+.contact-card p {
+    margin-bottom: 16px;
+}
+
+.contact-card a:not(.btn) {
+    color: #D96B1F;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.contact-card a:not(.btn):hover {
+    color: #C85A16;
+}
+
+.contact-action-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contact-action-row p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .locations-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .location-card {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 500px;
+        padding: 20px 16px;
+    }
+
+    .contact-card {
+        padding: 20px 16px;
+    }
+}
+
+/* =========================================
+   VIDARBHA & CITY TOPPERS
+   ========================================= */
+
+.toppers-section {
+    width: 100%;
+    text-align: center;
+}
+
+.toppers-section h2 {
+    text-align: center;
+}
+
+.toppers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.topper-card {
+    width: 280px;
+    max-width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    text-align: center;
+}
+
+.topper-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.topper-info {
+    padding: 16px;
+}
+
+.topper-info h3 {
+    color: #262626;
+    margin-bottom: 8px;
+}
+
+.topper-category {
+    color: #D96B1F;
+    margin-bottom: 6px;
+}
+
+.topper-year {
+    color: #555555;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .topper-card {
+        width: min(100%, 340px);
+    }
+}
+
+/* =========================================
+   TOPPER PHOTO PRESENTATION
+   ========================================= */
+
+.topper-card {
+    width: 300px;
+    max-width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #E3E3E3;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.topper-image-container {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+
+.topper-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F3F7EE;
+    color: #555555;
+}
+
+.topper-info {
+    padding: 18px;
+    text-align: center;
+}
+
+/* =========================================
+   TOPPER CARD SIZE
+   ========================================= */
+
+.toppers-grid {
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.topper-card {
+    width: 230px;
+    max-width: 230px;
+}
+
+.topper-image-container {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    max-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+
+.topper-image-container img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+}
+
+.topper-info {
+    padding: 12px;
+    text-align: center;
+}
+
+.topper-info h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.topper-category {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.topper-year {
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .topper-card {
+        width: min(100%, 230px);
+        max-width: 230px;
+    }
+}
+
+/* =========================================
+   ABOUT INTRODUCTION IMAGE
+   ========================================= */
+
+.about-content-layout {
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+}
+
+.about-content-layout .content-panel {
+    flex: 1 1 0;
+}
+
+.about-orientation-image {
+    flex: 0 1 40%;
+    width: 40%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 14px;
+    display: block;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .about-content-layout {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .about-orientation-image {
+        width: 100%;
+        max-width: none;
+    }
+}
