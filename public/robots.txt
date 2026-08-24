@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://avaneesh-cyber2006.github.io/Pillay-Sir-s-ICSE-Classes/sitemap.xml
